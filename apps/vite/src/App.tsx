@@ -14,6 +14,7 @@ import { Details } from "./Details.tsx";
 import { Home } from "./Home.tsx";
 import paletteIcon from "@ui5/webcomponents-icons/dist/palette.js";
 import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
+import logo from "./assets/logo.ts";
 
 const defaultTheme = "sap_horizon";
 export const ThemeContext = createContext(defaultTheme);
@@ -46,12 +47,7 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <ShellBar
         primaryTitle="Movie DB"
-        logo={
-          <img
-            src="https://sap.github.io/ui5-webcomponents/assets/images/sap-logo-svg.svg"
-            alt="SAP Logo"
-          />
-        }
+        logo={<img src={logo} alt="SAP Logo" />}
         onLogoClick={handleLogoClick}
       >
         <ShellBarItem icon={paletteIcon} onClick={handleShellBarItemClick} />
